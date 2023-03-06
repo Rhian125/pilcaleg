@@ -23,6 +23,8 @@ $setting = SiteHelpers::setting();
     <link rel="stylesheet" href="{{ asset('assets/core-admin/core-plugin/timepicker/bootstrap-timepicker.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/core-admin/core-component/fullcalendar/dist/fullcalendar.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/core-admin/core-component/fullcalendar/dist/fullcalendar.print.css') }}" media="print">
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+
 
     <link rel="stylesheet" href="{{ asset('assets/core-admin/core-dist/css/AdminLTE.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/core-admin/core-dist/css/skins/_all-skins.min.css') }}">
@@ -255,6 +257,7 @@ $setting = SiteHelpers::setting();
     <script src="{{ asset('/assets/core-admin/core-component/fastclick/lib/fastclick.js') }}"></script>
     <script src="{{ asset('/assets/core-admin/core-dist/js/adminlte.min.js') }}"></script>
     <script src="{{ asset('/assets/core-admin/core-dist/js/demo.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
     <!-- fullCalendar -->
     <!-- jQuery UI 1.11.4 -->
     <!-- <script src="{{ asset('assets/core-admin/core-component/jquery-ui/jquery-ui.min.js') }}"></script> -->

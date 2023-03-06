@@ -26,6 +26,7 @@ class User extends Authenticatable implements MustVerifyEmail
     protected $fillable = [
         'name',
         'email',
+        'email_verified_at',
         'password',
         'verification_code',
         'group_id',
@@ -67,7 +68,7 @@ class User extends Authenticatable implements MustVerifyEmail
     {
         return $this->hasOne('App\Models\Log');
     }
-    
+
     public function group(){
         return $this->belongsTo(Group::class, 'group_id');
     }
@@ -76,5 +77,5 @@ class User extends Authenticatable implements MustVerifyEmail
     {
         return $this->hasOne('App\Models\Access');
     }
-    
+
 }

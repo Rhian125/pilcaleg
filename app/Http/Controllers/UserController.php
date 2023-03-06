@@ -17,7 +17,7 @@ class UserController extends Controller
     {
         $this->middleware('auth');
     }
-	
+
     ## Tampikan Data
     public function index()
     {
@@ -25,7 +25,7 @@ class UserController extends Controller
 		$user = User::orderBy('id','DESC')->paginate(10);
 		return view('admin.user.index',compact('title','user'));
     }
-	
+
 	## Tampilkan Data Search
 	public function search(Request $request)
     {
@@ -38,7 +38,7 @@ class UserController extends Controller
                 })->orderBy('id','DESC')->paginate(10);
 		return view('admin.user.index',compact('title','user'));
     }
-	
+
 	## Tampilkan Form Create
 	public function create()
     {
@@ -48,7 +48,7 @@ class UserController extends Controller
         $view=$view->render();
         return $view;
     }
-	
+
 	## Simpan Data
 	public function store(Request $request)
     {
@@ -59,19 +59,20 @@ class UserController extends Controller
             'group_id' => 'required',
             'status' => 'required'
 		]);
-		
+
         $input['name'] = $request->name;
         $input['email'] = $request->email;
+        $input['email_verified_at'] = date('Y-m-d H:i:s');
         $input['password'] = Hash::make($request->password);
         $input['group_id'] = $request->group_id;
         $input['status'] = $request->status;
         User::create($input);
-		
+
         activity()->log('Tambah Data User');
 		return redirect('/user')->with('status','Data Tersimpan');
 
     }
-	
+
 	## Tampilkan Form Edit
     public function edit($user)
     {
@@ -83,11 +84,11 @@ class UserController extends Controller
         $view=$view->render();
 		return $view;
     }
-	
+
 	## Edit Data
     public function update(Request $request, $user)
     {
-        
+
         $user = Crypt::decrypt($user);
         $user = User::where('id',$user)->first();
 
@@ -96,7 +97,7 @@ class UserController extends Controller
                 $this->validate($request, [
                     'password' => 'required|string|min:8|confirmed'
                 ]);
-            } 
+            }
         } else {
             if($request->password){
                 $this->validate($request, [
@@ -109,7 +110,7 @@ class UserController extends Controller
                 ]);
             }
         }
-         
+
 		if($request->password){
             $user->name = $request->name;
             $user->email = $request->email;
@@ -123,7 +124,7 @@ class UserController extends Controller
             $user->status = $request->status;
         }
         $user->save();
-        
+
         activity()->log('Ubah Data User dengan ID = '.$user->id);
 		return redirect('/user')->with('status', 'Data Berhasil Diubah');
     }
@@ -152,7 +153,7 @@ class UserController extends Controller
     ## Edit Data
     public function update_profil(Request $request, $user)
     {
-        
+
         $user = Crypt::decrypt($user);
         $user = User::where('id',$user)->first();
 
@@ -163,9 +164,9 @@ class UserController extends Controller
                     'foto' => 'mimes:jpg,jpeg,png|max:300',
                     'current-password' => 'string|confirmed'
                 ]);
-            } 
+            }
         }
-            
+
         if($request->get('password')){
             if(!(strcmp($request->get('password'), $request->get('password_confirmation'))) == 0){
                 if($request->password){
@@ -174,7 +175,7 @@ class UserController extends Controller
                         'password' => 'string|min:8|confirmed'
                     ]);
                 }
-            } 
+            }
         }
 
         if($request->password){
@@ -197,17 +198,17 @@ class UserController extends Controller
             $cek_user->toArray();
             $user->password = $cek_user[0]->password;
         }
-        
+
         if($request->file('foto') == ""){}
         else
-        {	
+        {
             $filename = time().'.'.$request->foto->getClientOriginalExtension();
             $request->foto->move(public_path('upload/foto'), $filename);
             $user->foto = $filename;
         }
-        
+
         $user->save();
-        
+
         activity()->log('Ubah Data Profil dengan ID = '.$user->id);
         return redirect('/user/edit_profil/'.Crypt::encrypt($user->id))->with('status', 'Data Berhasil Diubah');
     }

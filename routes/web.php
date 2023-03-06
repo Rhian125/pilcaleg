@@ -5,16 +5,11 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegistrasiController;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\PegawaiController;
-use App\Http\Controllers\ReportController;
-use App\Http\Controllers\RekapitulasiController;
-use App\Http\Controllers\SendEmailController;
-use App\Http\Controllers\ImageUploadController;
-use App\Http\Controllers\DatabaseController;
-use App\Http\Controllers\MapController;
-use App\Http\Controllers\OfficeController;
-use App\Http\Controllers\PositionClassController;
-use App\Http\Controllers\PositionController;
+use App\Http\Controllers\TimpendukungController;
+use App\Http\Controllers\KecamatanController;
+use App\Http\Controllers\KelurahanController;
+use App\Http\Controllers\TpsController;
+use App\Http\Controllers\DptController;
 use App\Http\Controllers\LogController;
 use App\Http\Controllers\SettingController;
 use App\Http\Controllers\GroupController;
@@ -75,25 +70,15 @@ Route::get('/backup_database', function() {
 
 Route::middleware(['user_access','verified'])->group(function () {
 
-    ## Pegawai
-    Route::get('/pegawai', [PegawaiController::class, 'index']);
-    Route::get('/pegawai/search', [PegawaiController::class, 'search']);
-    Route::get('/pegawai/create', [PegawaiController::class, 'create']);
-    Route::post('/pegawai', [PegawaiController::class, 'store']);
-    Route::get('/pegawai/edit/{pegawai}', [PegawaiController::class, 'edit']);
-    Route::put('/pegawai/edit/{pegawai}', [PegawaiController::class, 'update']);
-    Route::get('/pegawai/hapus/{pegawai}',[PegawaiController::class, 'delete']);
-    Route::post('/pegawai/import', [PegawaiController::class, 'import']);
-
-    ## Data Relawan
-    Route::get('/data_relawan', [RelawanController::class, 'index']);
-    Route::get('/data_relawan/search', [RelawanController::class, 'search']);
-    Route::get('/data_relawan/create', [RelawanController::class, 'create']);
-    Route::post('/data_relawan', [RelawanController::class, 'store']);
-    Route::get('/data_relawan/edit/{pegawai}', [RelawanController::class, 'edit']);
-    Route::put('/data_relawan/edit/{pegawai}', [RelawanController::class, 'update']);
-    Route::get('/data_relawan/hapus/{pegawai}',[RelawanController::class, 'delete']);
-    Route::post('/data_relawan/import', [RelawanController::class, 'import']);
+    ## Tim Pendukung
+    Route::get('/data_pendukung', [TimpendukungController::class, 'index']);
+    Route::get('/data_pendukung/search', [TimpendukungController::class, 'search']);
+    Route::get('/data_pendukung/create', [TimpendukungController::class, 'create']);
+    Route::post('/data_pendukung', [TimpendukungController::class, 'store']);
+    Route::get('/data_pendukung/edit/{pegawai}', [TimpendukungController::class, 'edit']);
+    Route::put('/data_pendukung/edit/{pegawai}', [TimpendukungController::class, 'update']);
+    Route::get('/data_pendukung/hapus/{pegawai}',[TimpendukungController::class, 'delete']);
+    Route::post('/data_pendukung/import', [TimpendukungController::class, 'import']);
 
     Route::get('pdf_reader', function () {
         return view('admin.pdf.index');
@@ -103,7 +88,6 @@ Route::middleware(['user_access','verified'])->group(function () {
         return view('admin.image_editor.index');
     });
 
-    Route::get('/maps',[MapController::class, 'index']);
     Route::get('/report_excel',[ReportController::class, 'report_excel']);
     Route::get('/report_pdf',[ReportController::class, 'report_pdf']);
 
@@ -114,23 +98,44 @@ Route::middleware(['user_access','verified'])->group(function () {
     Route::get('/email',[SendEmailController::class, 'index']);
     Route::post('/email',[SendEmailController::class, 'send_email']);
 
-    ## Opd
-    Route::get('/office', [OfficeController::class, 'index']);
-    Route::get('/office/search', [OfficeController::class, 'search']);
-    Route::get('/office/create', [OfficeController::class, 'create']);
-    Route::post('/office', [OfficeController::class, 'store']);
-    Route::get('/office/edit/{office}', [OfficeController::class, 'edit']);
-    Route::put('/office/edit/{office}', [OfficeController::class, 'update']);
-    Route::get('/office/hapus/{office}',[OfficeController::class, 'delete']);
+    ## Kecamatan
+    Route::get('/kecamatan', [KecamatanController::class, 'index']);
+    Route::get('/kecamatan/search', [KecamatanController::class, 'search']);
+    Route::get('/kecamatan/create', [KecamatanController::class, 'create']);
+    Route::post('/kecamatan', [KecamatanController::class, 'store']);
+    Route::get('/kecamatan/edit/{kecamatan}', [KecamatanController::class, 'edit']);
+    Route::put('/kecamatan/edit/{kecamatan}', [KecamatanController::class, 'update']);
+    Route::get('/kecamatan/hapus/{kecamatan}',[KecamatanController::class, 'delete']);
 
-    ## Kelas jabatan
-    Route::get('/position_class', [PositionClassController::class, 'index']);
-    Route::get('/position_class/search', [PositionClassController::class, 'search']);
-    Route::get('/position_class/create', [PositionClassController::class, 'create']);
-    Route::post('/position_class', [PositionClassController::class, 'store']);
-    Route::get('/position_class/edit/{position_class}', [PositionClassController::class, 'edit']);
-    Route::put('/position_class/edit/{position_class}', [PositionClassController::class, 'update']);
-    Route::get('/position_class/hapus/{position_class}',[PositionClassController::class, 'delete']);
+    ## Kelurahan
+    Route::get('/kelurahan', [KelurahanController::class, 'index']);
+    Route::get('/kelurahan/search', [KelurahanController::class, 'search']);
+    Route::get('/kelurahan/create', [KelurahanController::class, 'create']);
+    Route::post('/kelurahan', [KelurahanController::class, 'store']);
+    Route::get('/kelurahan/edit/{kelurahan}', [KelurahanController::class, 'edit']);
+    Route::put('/kelurahan/edit/{kelurahan}', [KelurahanController::class, 'update']);
+    Route::get('/kelurahan/hapus/{kelurahan}',[KelurahanController::class, 'delete']);
+
+    ## TPS
+    Route::get('/tps', [TpsController::class, 'index']);
+    Route::get('/tps/search', [TpsController::class, 'search']);
+    Route::get('/tps/create', [TpsController::class, 'create']);
+    Route::post('/tps', [TpsController::class, 'store']);
+    Route::get('/tps/edit/{tps}', [TpsController::class, 'edit']);
+    Route::put('/tps/edit/{tps}', [TpsController::class, 'update']);
+    Route::get('/tps/hapus/{tps}',[TpsController::class, 'delete']);
+
+    ## DPT
+    Route::get('/dpt', [DptController::class, 'index']);
+    Route::get('/dpt/search', [DptController::class, 'search']);
+    Route::get('/dpt/create', [DptController::class, 'create']);
+    Route::post('/dpt', [DptController::class, 'store']);
+    Route::get('/dpt/edit/{dpt}', [DptController::class, 'edit']);
+    Route::put('/dpt/edit/{dpt}', [DptController::class, 'update']);
+    Route::get('/dpt/hapus/{dpt}',[DptController::class, 'delete']);
+
+    ##
+    Route::get('/kelurahan/village_districts_name/{subdistricts_id}',[KelurahanController::class, 'village_districts_name']);
 
     ## Group
     Route::get('/group', [GroupController::class, 'index']);
@@ -167,15 +172,6 @@ Route::middleware(['user_access','verified'])->group(function () {
 
 Route::middleware(['cek_status','verified'])->group(function () {
 
-    ## Jabatan
-    Route::get('/position/{position_class}', [PositionController::class, 'index']);
-    Route::get('/position/search/{position_class}', [PositionController::class, 'search']);
-    Route::get('/position/create/{position_class}', [PositionController::class, 'create']);
-    Route::post('/position/{position_class}', [PositionController::class, 'store']);
-    Route::get('/position/edit/{position_class}/{position}', [PositionController::class, 'edit']);
-    Route::put('/position/edit/{position_class}/{position}', [PositionController::class, 'update']);
-    Route::get('/position/hapus/{position_class}/{position}',[PositionController::class, 'delete']);
-
     ## Sub Menu
     Route::get('/sub_menu/{id}', [SubMenuController::class, 'index']);
     Route::get('/sub_menu/search/{id}', [SubMenuController::class, 'search']);
@@ -210,7 +206,3 @@ Route::middleware(['cek_status','verified'])->group(function () {
 });
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home')->middleware('verified');
-
-Route::get('dropzone',[ImageUploadController::class, 'index']);
-Route::post('dropzone',[ImageUploadController::class, 'store']);
-Route::post('dropzone/delete',[ImageUploadController::class, 'delete']);

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Pegawai;   //nama model
+use App\Models\Timpendukung;   //nama model
 use App\Models\User;   //nama model
 use App\Imports\PegawaiImport;     // Import data Pegawai
 use Maatwebsite\Excel\Facades\Excel; // Excel Library
@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Crypt;
 use Image;
 use PDF;
 
-class PegawaiController extends Controller
+class TimpendukungController extends Controller
 {
     ## Cek Login
     public function __construct()
@@ -26,9 +26,9 @@ class PegawaiController extends Controller
     ## Tampikan Data
     public function index()
     {
-        $title = "Pegawai";
-        $pegawai = Pegawai::where('status_hapus', 0)->orderBy('id', 'DESC')->paginate(25)->onEachSide(1);
-        return view('admin.pegawai.index', compact('title', 'pegawai'));
+        $title = "Data Pendukung";
+        $tim_pendukung = Timpendukung::where('status_hapus', 0)->orderBy('id', 'DESC')->paginate(25)->onEachSide(1);
+        return view('admin.data_pendukung.index', compact('title', 'tim_pendukung'));
     }
 
     ## Tampilkan Data Search
