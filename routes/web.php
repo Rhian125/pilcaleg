@@ -10,6 +10,8 @@ use App\Http\Controllers\KecamatanController;
 use App\Http\Controllers\KelurahanController;
 use App\Http\Controllers\TpsController;
 use App\Http\Controllers\DptController;
+use App\Http\Controllers\RtRwController;
+use App\Http\Controllers\SaksiController;
 use App\Http\Controllers\LogController;
 use App\Http\Controllers\SettingController;
 use App\Http\Controllers\GroupController;
@@ -94,10 +96,6 @@ Route::middleware(['user_access','verified'])->group(function () {
     ## Rekapitulasi
     Route::get('/rekapitulasi_jumlah_pegawai', [RekapitulasiController::class, 'rekapitulasi_jumlah_pegawai']);
 
-    ## Kirim Email
-    Route::get('/email',[SendEmailController::class, 'index']);
-    Route::post('/email',[SendEmailController::class, 'send_email']);
-
     ## Kecamatan
     Route::get('/kecamatan', [KecamatanController::class, 'index']);
     Route::get('/kecamatan/search', [KecamatanController::class, 'search']);
@@ -133,6 +131,26 @@ Route::middleware(['user_access','verified'])->group(function () {
     Route::get('/dpt/edit/{dpt}', [DptController::class, 'edit']);
     Route::put('/dpt/edit/{dpt}', [DptController::class, 'update']);
     Route::get('/dpt/hapus/{dpt}',[DptController::class, 'delete']);
+
+    ## RT/RW
+    Route::get('/rt_rw', [RtRwController::class, 'index']);
+    Route::get('/rt_rw/search', [RtRwController::class, 'search']);
+    Route::get('/rt_rw/create', [RtRwController::class, 'create']);
+    Route::post('/rt_rw', [RtRwController::class, 'store']);
+    Route::get('/rt_rw/edit/{rt_rw}', [RtRwController::class, 'edit']);
+    Route::put('/rt_rw/edit/{rt_rw}', [RtRwController::class, 'update']);
+    Route::get('/rt_rw/hapus/{rt_rw}',[RtRwController::class, 'delete']);
+
+    ## Tim Saksi
+    Route::get('/saksi', [SaksiController::class, 'index']);
+    Route::get('/saksi/search', [SaksiController::class, 'search']);
+    Route::get('/saksi/create', [SaksiController::class, 'create']);
+    Route::post('/saksi', [SaksiController::class, 'store']);
+    Route::get('/saksi/edit/{saksi}', [SaksiController::class, 'edit']);
+    Route::put('/saksi/edit/{saksi}', [SaksiController::class, 'update']);
+    Route::get('/saksi/hapus/{saksi}',[SaksiController::class, 'delete']);
+    Route::post('/data_saksipendukung/import', [SaksiController::class, 'import']);
+
 
     ##
     Route::get('/kelurahan/village_districts_name/{subdistricts_id}',[KelurahanController::class, 'village_districts_name']);

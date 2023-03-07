@@ -48,27 +48,20 @@
 
 				<table class="table table-bordered">
 					<tr style="background-color: gray;color:white">
-						<th rowspan="2"style="width: 60px">No</th>
-						<th rowspan="2">Nama Kelurahan</th>
-						<th colspan="2">Data Pemilih</th>
-						<th rowspan="2">Total</th>
-						<th style="width: 20%" rowspan="2">#aksi</th>
+						<th style="width: 60px">No</th>
+						<th >Nama Kelurahan</th>
+						<th >RT / RW</th>
+						<th style="width: 20%" >#aksi</th>
 					</tr>
-                    <tr style="background-color: gray;color:white">
-						<th>Laki-laki</th>
-						<th>perempuan</th>
-                    </tr>
-					@foreach($dpt as $v)
+					@foreach($rt_rw as $v)
 					<tr>
-						<td>{{ ($dpt ->currentpage()-1) * $dpt ->perpage() + $loop->index + 1 }}</td>
+						<td>{{ ($rt_rw ->currentpage()-1) * $rt_rw ->perpage() + $loop->index + 1 }}</td>
                         <td>
                             @if ($v->subdistricts_id)
 								{{ $v->kelurahan->village_districts_name}}
 							@endif
 						</td>
-						<td>{{ $v->amount_dpt_male }}</td>
-						<td>{{ $v->amount_dpt_female }}</td>
-						<td>{{ $v->amount_dpt_male + $v->amount_dpt_female}}</td>
+						<td>{{ $v->rt_number }} / {{ $v->rw_number }}</td>
 						<td>
 							@can('ubah-data')
 								<a href="{{ url('/'.Request::segment(1).'/edit/'.Crypt::encrypt($v->id) ) }}" class="btn btn-xs btn-flat btn-warning">Edit</a>
@@ -85,7 +78,7 @@
 		@endcan
 		<div class="box-footer">
 			<!-- PAGINATION -->
-			<div class="float-right">{{ $dpt->appends(Request::only('search'))->links() }}</div>
+			<div class="float-right">{{ $rt_rw->appends(Request::only('search'))->links() }}</div>
 		</div>
 	</div>
 	</section>

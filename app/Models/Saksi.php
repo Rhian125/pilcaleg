@@ -5,13 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Dpt extends Model
+class Saksi extends Model
 {
     // use HasFactory;
-    protected $table = 'amount_dpt';
+    protected $table = 'rt_rw';
     protected $fillable = [
-        'amount_dpt_male',
-        'amount_dpt_female',
+        'rt_number',
+        'rw_number',
         'subdistricts_id',
         'village_districts_id',
         'user_id',

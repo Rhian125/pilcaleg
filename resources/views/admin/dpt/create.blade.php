@@ -64,19 +64,19 @@
 						</div>
 					</div>
 
-					<div class="form-group @if ($errors->has('number_of_tps')) has-error @endif">
-						<label class="col-sm-2 control-label">{{ __('No. TPS') }}</label>
+					<div class="form-group @if ($errors->has('amount_dpt_male')) has-error @endif">
+						<label class="col-sm-2 control-label">{{ __('Jumlah Laki - Laki') }}</label>
 						<div class="col-sm-10">
-							@if ($errors->has('number_of_tps'))<label class="control-label" for="inputError"><i class="fa fa-times-circle-o"></i> {{ $errors->first('number_of_tps') }}</label>@endif
-							<input type="text" class="form-control" placeholder="No.TPS" name="number_of_tps" value="{{ old('number_of_tps') }}" >
+							@if ($errors->has('amount_dpt_male'))<label class="control-label" for="inputError"><i class="fa fa-times-circle-o"></i> {{ $errors->first('amount_dpt_male') }}</label>@endif
+							<input type="text" class="form-control" placeholder="Jumlah Laki - Laki" name="amount_dpt_male" value="{{ old('amount_dpt_male') }}" >
 						</div>
 					</div>
 
-					<div class="form-group @if ($errors->has('tps_information')) has-error @endif">
-						<label class="col-sm-2 control-label">{{ __('Keterangan') }}</label>
+					<div class="form-group @if ($errors->has('amount_dpt_female')) has-error @endif">
+						<label class="col-sm-2 control-label">{{ __('Jumlah Perempuan') }}</label>
 						<div class="col-sm-10">
-							@if ($errors->has('tps_information'))<label class="control-label" for="inputError"><i class="fa fa-times-circle-o"></i> {{ $errors->first('tps_information') }}</label>@endif
-							<textarea type="text" class="form-control" placeholder="Keterangan" name="tps_information" value="{{ old('tps_information') }}" ></textarea>
+							@if ($errors->has('amount_dpt_female'))<label class="control-label" for="inputError"><i class="fa fa-times-circle-o"></i> {{ $errors->first('amount_dpt_female') }}</label>@endif
+							<input type="text" class="form-control" placeholder="Jumlah Perempuan" name="amount_dpt_female" value="{{ old('amount_dpt_female') }}" >
 						</div>
 					</div>
 

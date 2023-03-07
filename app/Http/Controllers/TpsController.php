@@ -108,13 +108,13 @@ class TpsController extends Controller
     }
 
     ## Hapus Data
-    public function delete($kelurahan)
+    public function delete($tps)
     {
-        $kelurahan = Crypt::decrypt($kelurahan);
-        $kelurahan = Kelurahan::where('id',$kelurahan)->first();
-        $kelurahan->delete();
-        activity()->log('Hapus Data Kelurahan dengan ID = '.$kelurahan->id);
-		return redirect('/kelurahan')->with('status', 'Data Berhasil Dihapus');
+        $tps = Crypt::decrypt($tps);
+        $tps = Tps::where('id',$tps)->first();
+        $tps->delete();
+        activity()->log('Hapus Data TPS dengan ID = '.$tps->id);
+		return redirect('/tps')->with('status', 'Data Berhasil Dihapus');
     }
 
     // public function village_districts_name($subdistricts_id)
