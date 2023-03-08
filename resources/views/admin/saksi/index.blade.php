@@ -48,20 +48,40 @@
 
 				<table class="table table-bordered">
 					<tr style="background-color: gray;color:white">
-						<th style="width: 60px">No</th>
-						<th >Nama Kelurahan</th>
+						<th style="width: 10px">No</th>
+						<th >NIK</th>
+						<th >Nama Lengkap</th>
+						<th >Tempat Dan Tanggal Lahir</th>
+						<th >Jenis Kelamin</th>
+						<th >Pekerjaan</th>
+						<th >Alamat</th>
+						<th >Kecamatan</th>
+						<th >Kelurahan</th>
 						<th >RT / RW</th>
-						<th style="width: 20%" >#aksi</th>
+						<th >No. HandPhone</th>
+						<th style="width: 10px" >#aksi</th>
 					</tr>
 					@foreach($saksi as $v)
 					<tr>
 						<td>{{ ($saksi ->currentpage()-1) * $saksi ->perpage() + $loop->index + 1 }}</td>
+						<td>{{ $v->witness_id_number }}</td>
+						<td>{{ $v->witness_name }}</td>
+						<td>{{ $v->witness_place_of_birth }}, {{ $v->witness_date_of_birth }}</td>
+						<td>{{ $v->witness_gender }}</td>
+						<td>{{ $v->witness_work }}</td>
+						<td>{{ $v->witness_address }}</td>
+                        <td>
+                            @if ($v->subdistricts_id)
+								{{ $v->kecamatan->subdistricts_name}}
+							@endif
+						</td>
                         <td>
                             @if ($v->subdistricts_id)
 								{{ $v->kelurahan->village_districts_name}}
 							@endif
 						</td>
-						<td>{{ $v->rt_number }} / {{ $v->rw_number }}</td>
+						<td>{{ $v->witness_rt }} / {{ $v->witness_rw }}</td>
+						<td>{{ $v->witness_cellphone }}</td>
 						<td>
 							@can('ubah-data')
 								<a href="{{ url('/'.Request::segment(1).'/edit/'.Crypt::encrypt($v->id) ) }}" class="btn btn-xs btn-flat btn-warning">Edit</a>

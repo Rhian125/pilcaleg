@@ -25,7 +25,7 @@
 
 					@if($kelurahan->group !="3")
 					<div class="form-group @if ($errors->has('subdistricts_id')) has-error @endif">
-						<label class="col-sm-2 control-label">{{ __('Group') }}</label>
+						<label class="col-sm-2 control-label">{{ __('Kecamatan') }}</label>
 						<div class="col-sm-10">
 							@if ($errors->has('subdistricts_id'))<label class="control-label" for="inputError"><i class="fa fa-times-circle-o"></i> {{ $errors->first('subdistricts_id') }}</label>@endif
 							<select class="form-control" name="subdistricts_id">

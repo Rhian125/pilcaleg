@@ -8,10 +8,18 @@ use Illuminate\Database\Eloquent\Model;
 class Saksi extends Model
 {
     // use HasFactory;
-    protected $table = 'rt_rw';
+    protected $table = 'witness';
     protected $fillable = [
-        'rt_number',
-        'rw_number',
+        'witness_id_number',
+        'witness_name',
+        'witness_place_of_birth',
+        'witness_date_of_birth',
+        'witness_gender',
+        'witness_work',
+        'witness_address',
+        'witness_rt',
+        'witness_rw',
+        'witness_cellphone',
         'subdistricts_id',
         'village_districts_id',
         'user_id',
