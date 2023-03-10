@@ -6,13 +6,10 @@ $setting = SiteHelpers::setting();
 @endphp
 <div class="login-box">
             <div class="login-box-body">
-                <div class="text-center">
-                    <img src="{{ asset('upload/setting/'.$setting->large_icon) }}" alt="Chris Wood" class="img-fluid" style="height: 80px;max-width: 100%;max-height: 100%;" >
-                </div><br>
                 <!-- Start Form Login -->
         <form method="POST" action="{{ url('registrasi_w') }}">
             @csrf
-               
+
                     @if ($message = Session::get('status'))
                         <p class="alert text-center" style="color: #ffffff;background-color: #dd4b39;border-color: #d73925;">
                             {{ $message }}
@@ -48,7 +45,7 @@ $setting = SiteHelpers::setting();
                 <!-- End Form Login -->
 
                 <hr style="border: 0.5px dashed #d2d6de">
-                
+
                 <p><center>Sudah Punya Akun ? <a href="{{ url('/login')}}">Login Di Sini !!!</a></center></p>
             </div>
         </div>

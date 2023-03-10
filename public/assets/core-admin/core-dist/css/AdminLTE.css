@@ -1,6 +1,6 @@
 /*!
  * AdminLTE v2.4.18
- * 
+ *
  *   Author:  Colorlib
  *   Support: <https://github.com/ColorlibHQ/AdminLTE/issues>
  *   Repository: git://github.com/ColorlibHQ/AdminLTE.git
@@ -3311,9 +3311,9 @@ table.text-center th {
 .login-box,
 .register-box {
   width: 450px;
-  margin-top: 13%;
-  margin-bottom: 13%;
-  margin-left: auto;
+  margin-top: 22%;
+  margin-bottom: auto;
+  margin-left: 33.1%;
   margin-right: auto;
 }
 @media (max-width: 768px) {
@@ -3330,7 +3330,6 @@ table.text-center th {
   border-style: solid;
   border-color: #ece2e2;
   color: #666;
-  border-radius: 50px 20px;
 }
 .login-box-body .form-control-feedback,
 .register-box-body .form-control-feedback {

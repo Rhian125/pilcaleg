@@ -5,7 +5,6 @@
 $setting = SiteHelpers::setting();
 @endphp
 <div class="login-box">
-    <br><br><br><br>
             <div class="login-box-body">
                 <!-- Start Form Login -->
                 <form method="POST" action="{{ url('login_w') }}" method="POST" enctype="multipart/form-data">

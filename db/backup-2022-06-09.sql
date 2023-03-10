@@ -15,31 +15,31 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 
--- Dumping database structure for db_pilcaleg
-CREATE DATABASE IF NOT EXISTS `db_pilcaleg` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
-USE `db_pilcaleg`;
+-- Dumping database structure for projectkoding_Oher2024
+CREATE DATABASE IF NOT EXISTS `projectkoding_Oher2024` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+USE `projectkoding_Oher2024`;
 
--- Dumping structure for table db_pilcaleg.activity_log
+-- Dumping structure for table projectkoding_Oher2024.activity_log
 CREATE TABLE IF NOT EXISTS `activity_log` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
-  `log_name` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `description` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `subject_type` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `event` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `log_name` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `subject_type` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `event` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `subject_id` bigint unsigned DEFAULT NULL,
-  `causer_type` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `causer_type` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `causer_id` bigint unsigned DEFAULT NULL,
   `properties` json DEFAULT NULL,
-  `batch_uuid` char(36) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `batch_uuid` char(36) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `subject` (`subject_type`,`subject_id`),
   KEY `causer` (`causer_type`,`causer_id`),
   KEY `activity_log_log_name_index` (`log_name`)
-) ENGINE=InnoDB AUTO_INCREMENT=86 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=215 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table db_pilcaleg.activity_log: ~69 rows (approximately)
+-- Dumping data for table projectkoding_Oher2024.activity_log: ~155 rows (approximately)
 INSERT INTO `activity_log` (`id`, `log_name`, `description`, `subject_type`, `event`, `subject_id`, `causer_type`, `causer_id`, `properties`, `batch_uuid`, `created_at`, `updated_at`) VALUES
 	(1, 'default', 'Login', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2023-02-28 13:24:28', '2023-02-28 13:24:28'),
 	(2, 'default', 'Login', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2023-02-28 14:20:52', '2023-02-28 14:20:52'),
@@ -125,9 +125,159 @@ INSERT INTO `activity_log` (`id`, `log_name`, `description`, `subject_type`, `ev
 	(82, 'default', 'Log Out', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2023-03-01 17:39:30', '2023-03-01 17:39:30'),
 	(83, 'default', 'Login', NULL, NULL, NULL, 'App\\Models\\User', 506, '[]', NULL, '2023-03-01 17:39:35', '2023-03-01 17:39:35'),
 	(84, 'default', 'Log Out', NULL, NULL, NULL, 'App\\Models\\User', 506, '[]', NULL, '2023-03-01 17:40:09', '2023-03-01 17:40:09'),
-	(85, 'default', 'Login', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2023-03-01 17:40:13', '2023-03-01 17:40:13');
+	(85, 'default', 'Login', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2023-03-01 17:40:13', '2023-03-01 17:40:13'),
+	(86, 'default', 'Login', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2023-03-02 08:36:56', '2023-03-02 08:36:56'),
+	(87, 'default', 'Tambah Data Menu', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2023-03-02 08:42:37', '2023-03-02 08:42:37'),
+	(88, 'default', 'Tambah Data Menu Akses', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2023-03-02 08:44:06', '2023-03-02 08:44:06'),
+	(89, 'default', 'Login', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2023-03-03 12:34:13', '2023-03-03 12:34:13'),
+	(90, 'default', 'Tambah Data Kecamatan', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2023-03-03 13:48:18', '2023-03-03 13:48:18'),
+	(91, 'default', 'Tambah Data Menu', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2023-03-03 13:52:59', '2023-03-03 13:52:59'),
+	(92, 'default', 'Tambah Data Kecamatan', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2023-03-03 13:54:00', '2023-03-03 13:54:00'),
+	(93, 'default', 'Tambah Data Kecamatan', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2023-03-03 13:55:16', '2023-03-03 13:55:16'),
+	(94, 'default', 'Tambah Data Kecamatan', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2023-03-03 13:55:36', '2023-03-03 13:55:36'),
+	(95, 'default', 'Tambah Data Kecamatan', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2023-03-03 13:57:23', '2023-03-03 13:57:23'),
+	(96, 'default', 'Hapus Data Kecamatan dengan ID = 1', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2023-03-03 14:08:46', '2023-03-03 14:08:46'),
+	(97, 'default', 'Tambah Data Kecamatan', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2023-03-03 14:08:51', '2023-03-03 14:08:51'),
+	(98, 'default', 'Ubah Data Kecamatan dengan ID = 2', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2023-03-03 14:12:56', '2023-03-03 14:12:56'),
+	(99, 'default', 'Hapus Data Kecamatan dengan ID = 2', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2023-03-03 14:13:04', '2023-03-03 14:13:04'),
+	(100, 'default', 'Hapus Data Menu dengan ID = 24', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2023-03-03 14:15:24', '2023-03-03 14:15:24'),
+	(101, 'default', 'Hapus Data Menu dengan ID = 25', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2023-03-03 14:15:27', '2023-03-03 14:15:27'),
+	(102, 'default', 'Hapus Data Menu dengan ID = 26', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2023-03-03 14:15:30', '2023-03-03 14:15:30'),
+	(103, 'default', 'Hapus Data Menu dengan ID = 27', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2023-03-03 14:15:33', '2023-03-03 14:15:33'),
+	(104, 'default', 'Hapus Data Menu dengan ID = 28', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2023-03-03 14:15:35', '2023-03-03 14:15:35'),
+	(105, 'default', 'Tambah Data Kecamatan', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2023-03-03 14:19:52', '2023-03-03 14:19:52'),
+	(106, 'default', 'Tambah Data Kecamatan', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2023-03-03 14:19:56', '2023-03-03 14:19:56'),
+	(107, 'default', 'Ubah Data Kecamatan dengan ID = 4', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2023-03-03 14:20:38', '2023-03-03 14:20:38'),
+	(108, 'default', 'Ubah Data Kecamatan dengan ID = 4', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2023-03-03 14:20:46', '2023-03-03 14:20:46'),
+	(109, 'default', 'Hapus Data User dengan ID = 504', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2023-03-03 14:59:19', '2023-03-03 14:59:19'),
+	(110, 'default', 'Ubah Data User dengan ID = 506', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2023-03-03 14:59:30', '2023-03-03 14:59:30'),
+	(111, 'default', 'Log Out', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2023-03-03 14:59:34', '2023-03-03 14:59:34'),
+	(112, 'default', 'Login', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2023-03-03 15:00:06', '2023-03-03 15:00:06'),
+	(113, 'default', 'Ubah Data User dengan ID = 506', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2023-03-03 15:00:25', '2023-03-03 15:00:25'),
+	(114, 'default', 'Log Out', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2023-03-03 15:00:31', '2023-03-03 15:00:31'),
+	(115, 'default', 'Login', NULL, NULL, NULL, 'App\\Models\\User', 506, '[]', NULL, '2023-03-03 15:00:35', '2023-03-03 15:00:35'),
+	(116, 'default', 'Log Out', NULL, NULL, NULL, 'App\\Models\\User', 506, '[]', NULL, '2023-03-03 15:01:02', '2023-03-03 15:01:02'),
+	(117, 'default', 'Login', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2023-03-03 15:01:05', '2023-03-03 15:01:05'),
+	(118, 'default', 'Tambah Data Menu Akses', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2023-03-03 15:01:37', '2023-03-03 15:01:37'),
+	(119, 'default', 'Tambah Data User', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2023-03-03 15:07:51', '2023-03-03 15:07:51'),
+	(120, 'default', 'Tambah Data User', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2023-03-03 15:08:54', '2023-03-03 15:08:54'),
+	(121, 'default', 'Hapus Data User dengan ID = 508', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2023-03-03 15:20:37', '2023-03-03 15:20:37'),
+	(122, 'default', 'Hapus Data User dengan ID = 507', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2023-03-03 15:20:41', '2023-03-03 15:20:41'),
+	(123, 'default', 'Tambah Data User', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2023-03-03 15:21:21', '2023-03-03 15:21:21'),
+	(124, 'default', 'Tambah Data User', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2023-03-03 15:24:11', '2023-03-03 15:24:11'),
+	(125, 'default', 'Login', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2023-03-04 00:00:08', '2023-03-04 00:00:08'),
+	(126, 'default', 'Hapus Data Kelurahan dengan ID = 4', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2023-03-04 00:39:30', '2023-03-04 00:39:30'),
+	(127, 'default', 'Hapus Data Kelurahan dengan ID = 3', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2023-03-04 00:39:34', '2023-03-04 00:39:34'),
+	(128, 'default', 'Tambah Data Kecamatan', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2023-03-04 00:42:40', '2023-03-04 00:42:40'),
+	(129, 'default', 'Tambah Data Kecamatan', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2023-03-04 00:42:46', '2023-03-04 00:42:46'),
+	(130, 'default', 'Tambah Data Kelurahan', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2023-03-04 00:53:03', '2023-03-04 00:53:03'),
+	(131, 'default', 'Tambah Data Kelurahan', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2023-03-04 00:59:20', '2023-03-04 00:59:20'),
+	(132, 'default', 'Ubah Data Kelurahan dengan ID = 2', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2023-03-04 01:21:24', '2023-03-04 01:21:24'),
+	(133, 'default', 'Ubah Data Kelurahan dengan ID = 1', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2023-03-04 01:22:01', '2023-03-04 01:22:01'),
+	(134, 'default', 'Hapus Data Sub Menu dengan ID = 24', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2023-03-04 01:22:52', '2023-03-04 01:22:52'),
+	(135, 'default', 'Tambah Data Sub Menu', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2023-03-04 01:23:27', '2023-03-04 01:23:27'),
+	(136, 'default', 'Tambah Data Sub Menu', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2023-03-04 01:23:51', '2023-03-04 01:23:51'),
+	(137, 'default', 'Ubah Data Sub Menu Akses dengan ID = 50', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2023-03-04 01:24:24', '2023-03-04 01:24:24'),
+	(138, 'default', 'Tambah Data Sub Menu Akses', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2023-03-04 01:24:38', '2023-03-04 01:24:38'),
+	(139, 'default', 'Hapus Data Sub Menu Akses dengan ID = 55', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2023-03-04 01:24:56', '2023-03-04 01:24:56'),
+	(140, 'default', 'Ubah Data Sub Menu dengan ID = 25', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2023-03-04 01:25:10', '2023-03-04 01:25:10'),
+	(141, 'default', 'Tambah Data Sub Menu Akses', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2023-03-04 01:25:51', '2023-03-04 01:25:51'),
+	(142, 'default', 'Tambah Data Sub Menu Akses', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2023-03-04 01:26:05', '2023-03-04 01:26:05'),
+	(143, 'default', 'Hapus Data Kelurahan dengan ID = 2', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2023-03-04 01:28:02', '2023-03-04 01:28:02'),
+	(144, 'default', 'Hapus Data Kelurahan dengan ID = 1', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2023-03-04 01:28:06', '2023-03-04 01:28:06'),
+	(145, 'default', 'Tambah Data Kelurahan', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2023-03-04 01:30:34', '2023-03-04 01:30:34'),
+	(146, 'default', 'Tambah Data Kelurahan', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2023-03-04 01:30:56', '2023-03-04 01:30:56'),
+	(147, 'default', 'Tambah Data Kelurahan', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2023-03-04 01:31:17', '2023-03-04 01:31:17'),
+	(148, 'default', 'Tambah Data Kelurahan', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2023-03-04 01:31:36', '2023-03-04 01:31:36'),
+	(149, 'default', 'Tambah Data Kelurahan', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2023-03-04 01:32:08', '2023-03-04 01:32:08'),
+	(150, 'default', 'Tambah Data Kelurahan', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2023-03-04 01:32:25', '2023-03-04 01:32:25'),
+	(151, 'default', 'Tambah Data Kelurahan', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2023-03-04 01:32:44', '2023-03-04 01:32:44'),
+	(152, 'default', 'Tambah Data Kelurahan', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2023-03-04 01:33:02', '2023-03-04 01:33:02'),
+	(153, 'default', 'Tambah Data Kelurahan', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2023-03-04 01:33:19', '2023-03-04 01:33:19'),
+	(154, 'default', 'Tambah Data Kelurahan', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2023-03-04 01:33:42', '2023-03-04 01:33:42'),
+	(155, 'default', 'Tambah Data Kelurahan', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2023-03-04 01:33:59', '2023-03-04 01:33:59'),
+	(156, 'default', 'Tambah Data Kelurahan', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2023-03-04 01:34:13', '2023-03-04 01:34:13'),
+	(157, 'default', 'Tambah Data Kelurahan', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2023-03-04 01:34:30', '2023-03-04 01:34:30'),
+	(158, 'default', 'Tambah Data Kelurahan', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2023-03-04 01:34:49', '2023-03-04 01:34:49'),
+	(159, 'default', 'Tambah Data Kelurahan', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2023-03-04 01:35:03', '2023-03-04 01:35:03'),
+	(160, 'default', 'Tambah Data Kelurahan', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2023-03-04 01:35:19', '2023-03-04 01:35:19'),
+	(161, 'default', 'Tambah Data Kelurahan', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2023-03-04 01:35:37', '2023-03-04 01:35:37'),
+	(162, 'default', 'Tambah Data Kelurahan', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2023-03-04 01:35:54', '2023-03-04 01:35:54'),
+	(163, 'default', 'Ubah Data Sub Menu dengan ID = 25', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2023-03-04 01:37:51', '2023-03-04 01:37:51'),
+	(164, 'default', 'Ubah Data Sub Menu dengan ID = 26', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2023-03-04 01:37:59', '2023-03-04 01:37:59'),
+	(165, 'default', 'Ubah Data Menu dengan ID = 22', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2023-03-04 01:38:55', '2023-03-04 01:38:55'),
+	(166, 'default', 'Login', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2023-03-04 11:02:49', '2023-03-04 11:02:49'),
+	(167, 'default', 'Login', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2023-03-04 16:00:47', '2023-03-04 16:00:47'),
+	(168, 'default', 'Login', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2023-03-04 17:37:20', '2023-03-04 17:37:20'),
+	(169, 'default', 'Tambah Data User', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2023-03-04 20:35:32', '2023-03-04 20:35:32'),
+	(170, 'default', 'Login', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2023-03-05 02:33:19', '2023-03-05 02:33:19'),
+	(171, 'default', 'Login', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2023-03-05 08:35:51', '2023-03-05 08:35:51'),
+	(172, 'default', 'Tambah Data TPS', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2023-03-05 08:41:14', '2023-03-05 08:41:14'),
+	(173, 'default', 'Ubah Data TPS dengan ID = 1', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2023-03-05 10:46:27', '2023-03-05 10:46:27'),
+	(174, 'default', 'Ubah Data TPS dengan ID = 1', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2023-03-05 10:49:26', '2023-03-05 10:49:26'),
+	(175, 'default', 'Ubah Data TPS dengan ID = 1', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2023-03-05 10:49:47', '2023-03-05 10:49:47'),
+	(176, 'default', 'Login', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2023-03-06 03:18:27', '2023-03-06 03:18:27'),
+	(177, 'default', 'Login', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2023-03-06 13:50:58', '2023-03-06 13:50:58'),
+	(178, 'default', 'Tambah Data DPT', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2023-03-06 16:11:41', '2023-03-06 16:11:41'),
+	(179, 'default', 'Hapus Data Kelurahan dengan ID = 2', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2023-03-06 16:14:38', '2023-03-06 16:14:38'),
+	(180, 'default', 'Hapus Data Kelurahan dengan ID = 1', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2023-03-06 16:14:44', '2023-03-06 16:14:44'),
+	(181, 'default', 'Tambah Data DPT', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2023-03-06 16:14:53', '2023-03-06 16:14:53'),
+	(182, 'default', 'Ubah Data DPT dengan ID = 3', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2023-03-06 16:23:14', '2023-03-06 16:23:14'),
+	(183, 'default', 'Ubah Data DPT dengan ID = 3', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2023-03-06 16:23:52', '2023-03-06 16:23:52'),
+	(184, 'default', 'Hapus Data TPS dengan ID = 1', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2023-03-06 16:25:15', '2023-03-06 16:25:15'),
+	(185, 'default', 'Hapus Data Kelurahan dengan ID = 3', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2023-03-06 16:25:51', '2023-03-06 16:25:51'),
+	(186, 'default', 'Login', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2023-03-06 17:00:50', '2023-03-06 17:00:50'),
+	(187, 'default', 'Login', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2023-03-07 14:20:47', '2023-03-07 14:20:47'),
+	(188, 'default', 'Hapus Data Sub Menu dengan ID = 26', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2023-03-07 14:21:11', '2023-03-07 14:21:11'),
+	(189, 'default', 'Ubah Data Sub Menu dengan ID = 25', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2023-03-07 14:21:33', '2023-03-07 14:21:33'),
+	(190, 'default', 'Tambah Data RT/RW', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2023-03-07 14:46:26', '2023-03-07 14:46:26'),
+	(191, 'default', 'Hapus Data RT/RW dengan ID = 1', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2023-03-07 14:48:08', '2023-03-07 14:48:08'),
+	(192, 'default', 'Tambah Data RT/RW', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2023-03-07 14:48:18', '2023-03-07 14:48:18'),
+	(193, 'default', 'Tambah Data RT/RW', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2023-03-07 14:48:44', '2023-03-07 14:48:44'),
+	(194, 'default', 'Ubah Data RT/RW dengan ID = 3', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2023-03-07 14:55:19', '2023-03-07 14:55:19'),
+	(195, 'default', 'Hapus Data RT/RW dengan ID = 3', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2023-03-07 14:55:28', '2023-03-07 14:55:28'),
+	(196, 'default', 'Hapus Data RT/RW dengan ID = 2', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2023-03-07 14:55:32', '2023-03-07 14:55:32'),
+	(197, 'default', 'Tambah Data RT/RW', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2023-03-07 14:56:01', '2023-03-07 14:56:01'),
+	(198, 'default', 'Ubah Data Menu dengan ID = 20', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2023-03-07 15:10:56', '2023-03-07 15:10:56'),
+	(199, 'default', 'Ubah Data Menu dengan ID = 22', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2023-03-07 15:11:05', '2023-03-07 15:11:05'),
+	(200, 'default', 'Log Out', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2023-03-07 15:32:23', '2023-03-07 15:32:23'),
+	(201, 'default', 'Login', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2023-03-08 03:55:05', '2023-03-08 03:55:05'),
+	(202, 'default', 'Tambah Data TPS', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2023-03-08 03:58:29', '2023-03-08 03:58:29'),
+	(203, 'default', 'Ubah Data TPS dengan ID = 2', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2023-03-08 03:59:43', '2023-03-08 03:59:43'),
+	(204, 'default', 'Tambah Data DPT', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2023-03-08 04:00:34', '2023-03-08 04:00:34'),
+	(205, 'default', 'Tambah Data TPS', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2023-03-08 04:10:11', '2023-03-08 04:10:11'),
+	(206, 'default', 'Ubah Data TPS dengan ID = 3', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2023-03-08 04:11:21', '2023-03-08 04:11:21'),
+	(207, 'default', 'Tambah Data DPT', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2023-03-08 04:12:46', '2023-03-08 04:12:46'),
+	(208, 'default', 'Hapus Data Kelurahan dengan ID = 4', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2023-03-08 04:12:57', '2023-03-08 04:12:57'),
+	(209, 'default', 'Ubah Data DPT dengan ID = 5', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2023-03-08 04:13:56', '2023-03-08 04:13:56'),
+	(210, 'default', 'Tambah Data RT/RW', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2023-03-08 04:14:58', '2023-03-08 04:14:58'),
+	(211, 'default', 'Ubah Data RT/RW dengan ID = 5', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2023-03-08 04:15:37', '2023-03-08 04:15:37'),
+	(212, 'default', 'Login', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2023-03-08 15:29:41', '2023-03-08 15:29:41'),
+	(213, 'default', 'Tambah Data Sub Menu Akses', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2023-03-08 15:30:21', '2023-03-08 15:30:21'),
+	(214, 'default', 'Ubah Data Sub Menu Akses dengan ID = 52', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2023-03-08 15:30:35', '2023-03-08 15:30:35');
 
--- Dumping structure for table db_pilcaleg.election_results
+-- Dumping structure for table projectkoding_Oher2024.amount_dpt
+CREATE TABLE IF NOT EXISTS `amount_dpt` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `amount_dpt_male` int DEFAULT NULL,
+  `amount_dpt_female` int DEFAULT NULL,
+  `subdistricts_id` bigint unsigned NOT NULL,
+  `village_districts_id` bigint unsigned NOT NULL,
+  `user_id` int DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `amount_dpt_subdistricts_id_foreign` (`subdistricts_id`),
+  KEY `amount_dpt_village_districts_id_foreign` (`village_districts_id`),
+  CONSTRAINT `amount_dpt_subdistricts_id_foreign` FOREIGN KEY (`subdistricts_id`) REFERENCES `subdistricts` (`id`),
+  CONSTRAINT `amount_dpt_village_districts_id_foreign` FOREIGN KEY (`village_districts_id`) REFERENCES `village_districts` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Dumping data for table projectkoding_Oher2024.amount_dpt: ~2 rows (approximately)
+INSERT INTO `amount_dpt` (`id`, `amount_dpt_male`, `amount_dpt_female`, `subdistricts_id`, `village_districts_id`, `user_id`, `created_at`, `updated_at`) VALUES
+	(5, 1235, 1234, 5, 12, 1, '2023-03-08 04:12:46', '2023-03-08 04:13:56');
+
+-- Dumping structure for table projectkoding_Oher2024.election_results
 CREATE TABLE IF NOT EXISTS `election_results` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
   `tps` int DEFAULT NULL,
@@ -146,12 +296,12 @@ CREATE TABLE IF NOT EXISTS `election_results` (
   CONSTRAINT `election_results_village_districts_id_foreign` FOREIGN KEY (`village_districts_id`) REFERENCES `village_districts` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table db_pilcaleg.election_results: ~0 rows (approximately)
+-- Dumping data for table projectkoding_Oher2024.election_results: ~0 rows (approximately)
 
--- Dumping structure for table db_pilcaleg.events
+-- Dumping structure for table projectkoding_Oher2024.events
 CREATE TABLE IF NOT EXISTS `events` (
   `id` int unsigned NOT NULL AUTO_INCREMENT,
-  `title` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `title` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `start` date NOT NULL,
   `end` date NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
@@ -159,41 +309,41 @@ CREATE TABLE IF NOT EXISTS `events` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table db_pilcaleg.events: ~0 rows (approximately)
+-- Dumping data for table projectkoding_Oher2024.events: ~0 rows (approximately)
 
--- Dumping structure for table db_pilcaleg.failed_jobs
+-- Dumping structure for table projectkoding_Oher2024.failed_jobs
 CREATE TABLE IF NOT EXISTS `failed_jobs` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
-  `uuid` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `connection` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `queue` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `payload` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
-  `exception` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `uuid` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `connection` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `queue` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `payload` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `exception` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `failed_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   UNIQUE KEY `failed_jobs_uuid_unique` (`uuid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table db_pilcaleg.failed_jobs: ~0 rows (approximately)
+-- Dumping data for table projectkoding_Oher2024.failed_jobs: ~0 rows (approximately)
 
--- Dumping structure for table db_pilcaleg.groups
+-- Dumping structure for table projectkoding_Oher2024.groups
 CREATE TABLE IF NOT EXISTS `groups` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `group_name` varchar(18) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `group_name` varchar(18) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `status` int NOT NULL DEFAULT '0',
   `user_id` int DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci ROW_FORMAT=DYNAMIC;
 
--- Dumping data for table db_pilcaleg.groups: ~3 rows (approximately)
+-- Dumping data for table projectkoding_Oher2024.groups: ~3 rows (approximately)
 INSERT INTO `groups` (`id`, `group_name`, `status`, `user_id`, `created_at`, `updated_at`) VALUES
 	(1, 'Administrator', 0, 1, '2022-01-11 05:01:48', '2022-01-11 05:01:48'),
 	(2, 'Operator', 0, 1, '2022-01-11 05:01:57', '2022-01-11 05:01:57'),
 	(3, 'Kasir', 0, 1, '2022-01-18 02:38:17', '2022-01-18 02:41:41');
 
--- Dumping structure for table db_pilcaleg.image_uploads
+-- Dumping structure for table projectkoding_Oher2024.image_uploads
 CREATE TABLE IF NOT EXISTS `image_uploads` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
   `filename` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
@@ -202,7 +352,7 @@ CREATE TABLE IF NOT EXISTS `image_uploads` (
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
 
--- Dumping data for table db_pilcaleg.image_uploads: ~11 rows (approximately)
+-- Dumping data for table projectkoding_Oher2024.image_uploads: ~11 rows (approximately)
 INSERT INTO `image_uploads` (`id`, `filename`, `created_at`, `updated_at`) VALUES
 	(1, '1653344319104DSC_5410 copy2.jpg', '2022-05-23 22:18:39', '2022-05-23 22:18:39'),
 	(2, '1653344321784DSC_0410.JPG', '2022-05-23 22:18:42', '2022-05-23 22:18:42'),
@@ -216,31 +366,32 @@ INSERT INTO `image_uploads` (`id`, `filename`, `created_at`, `updated_at`) VALUE
 	(17, '1653344856062DSC_5410 copy2.jpg', '2022-05-23 22:27:36', '2022-05-23 22:27:36'),
 	(22, '16533526167503167995-min.jpg', '2022-05-24 00:36:57', '2022-05-24 00:36:57');
 
--- Dumping structure for table db_pilcaleg.menus
+-- Dumping structure for table projectkoding_Oher2024.menus
 CREATE TABLE IF NOT EXISTS `menus` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `menu_name` varchar(18) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
-  `link` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
-  `attribute` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `menu_name` varchar(18) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `link` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `attribute` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `position` int NOT NULL DEFAULT '0',
-  `desc` tinytext CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+  `desc` tinytext CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci,
   `category` int NOT NULL DEFAULT '0',
   `status` int NOT NULL DEFAULT '0',
   `user_id` int DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci ROW_FORMAT=DYNAMIC;
 
--- Dumping data for table db_pilcaleg.menus: ~5 rows (approximately)
+-- Dumping data for table projectkoding_Oher2024.menus: ~6 rows (approximately)
 INSERT INTO `menus` (`id`, `menu_name`, `link`, `attribute`, `position`, `desc`, `category`, `status`, `user_id`, `created_at`, `updated_at`) VALUES
 	(4, 'Pengaturan', '#', 'fa fa-cogs', 15, NULL, 1, 1, 1, '2022-01-12 03:05:31', '2022-06-03 03:00:35'),
 	(5, 'Log Activity', 'log', 'fa fa-circle-notch', 14, NULL, 2, 1, 1, '2022-01-14 09:59:00', '2022-06-03 03:00:56'),
-	(20, 'Data Relawan', 'data_relawan', 'fa fa-user', 2, NULL, 2, 1, 1, '2023-02-28 11:24:56', '2023-03-01 07:05:10'),
+	(20, 'Data Saksi', 'saksi', 'fa fa-user', 2, NULL, 2, 1, 1, '2023-02-28 11:24:56', '2023-03-07 15:10:56'),
 	(21, 'Data Master', '#', 'fa fa-list', 1, NULL, 2, 1, 1, '2023-03-01 07:05:00', '2023-03-01 07:05:00'),
-	(22, 'Data Pendukung', 'data_pendukung', 'fa fa-user', 3, NULL, 2, 1, 1, '2023-03-01 07:22:13', '2023-03-01 07:22:13');
+	(22, 'Data Pendukung', 'pendukung', 'fa fa-users', 3, NULL, 2, 1, 1, '2023-03-01 07:22:13', '2023-03-07 15:11:05'),
+	(23, 'Hasil Pemilihan', 'hasil_pemilihan', 'fa fa-check', 4, NULL, 2, 1, 1, '2023-03-02 08:42:37', '2023-03-02 08:42:37');
 
--- Dumping structure for table db_pilcaleg.menu_accesses
+-- Dumping structure for table projectkoding_Oher2024.menu_accesses
 CREATE TABLE IF NOT EXISTS `menu_accesses` (
   `id` int NOT NULL AUTO_INCREMENT,
   `group_id` int NOT NULL DEFAULT '0',
@@ -258,9 +409,9 @@ CREATE TABLE IF NOT EXISTS `menu_accesses` (
   KEY `menu_id` (`menu_id`) USING BTREE,
   CONSTRAINT `menu_accesses_ibfk_1` FOREIGN KEY (`group_id`) REFERENCES `groups` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `menu_accesses_ibfk_2` FOREIGN KEY (`menu_id`) REFERENCES `menus` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=35 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci ROW_FORMAT=DYNAMIC;
 
--- Dumping data for table db_pilcaleg.menu_accesses: ~8 rows (approximately)
+-- Dumping data for table projectkoding_Oher2024.menu_accesses: ~9 rows (approximately)
 INSERT INTO `menu_accesses` (`id`, `group_id`, `menu_id`, `create`, `read`, `update`, `delete`, `print`, `user_id`, `created_at`, `updated_at`) VALUES
 	(1, 1, 4, 1, 1, 1, 1, 1, 1, '2022-01-13 03:02:25', '2022-01-13 03:02:25'),
 	(7, 1, 5, 1, 1, 1, 1, 1, 1, '2022-01-14 09:59:17', '2022-01-14 09:59:17'),
@@ -270,17 +421,19 @@ INSERT INTO `menu_accesses` (`id`, `group_id`, `menu_id`, `create`, `read`, `upd
 	(29, 1, 22, 1, 1, 1, 1, 1, 1, '2023-03-01 07:22:38', '2023-03-01 07:22:38'),
 	(30, 2, 21, 0, 0, 0, 0, 0, 1, '2023-03-01 07:30:51', '2023-03-01 07:30:51'),
 	(31, 2, 20, 1, 1, 1, 1, 1, 1, '2023-03-01 07:31:05', '2023-03-01 07:31:05'),
-	(32, 2, 22, 1, 1, 1, 1, 1, 1, '2023-03-01 07:31:16', '2023-03-01 07:31:16');
+	(32, 2, 22, 1, 1, 1, 1, 1, 1, '2023-03-01 07:31:16', '2023-03-01 07:31:16'),
+	(33, 1, 23, 1, 1, 1, 1, 1, 1, '2023-03-02 08:44:06', '2023-03-02 08:44:06'),
+	(34, 2, 23, 1, 1, 1, 1, 1, 1, '2023-03-03 15:01:37', '2023-03-03 15:01:37');
 
--- Dumping structure for table db_pilcaleg.migrations
+-- Dumping structure for table projectkoding_Oher2024.migrations
 CREATE TABLE IF NOT EXISTS `migrations` (
   `id` int unsigned NOT NULL AUTO_INCREMENT,
-  `migration` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `migration` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `batch` int NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table db_pilcaleg.migrations: ~17 rows (approximately)
+-- Dumping data for table projectkoding_Oher2024.migrations: ~25 rows (approximately)
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 	(1, '2014_10_12_000000_create_users_table', 1),
 	(2, '2014_10_12_100000_create_password_resets_table', 1),
@@ -306,26 +459,32 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 	(22, '2023_03_01_223926_create_election_results', 13),
 	(23, '2023_03_01_224225_create_support_teams', 13),
 	(24, '2023_03_01_234346_create_volunteers', 13),
-	(25, '2023_03_01_234424_create_tps', 13);
+	(25, '2023_03_01_234424_create_tps', 13),
+	(26, '2023_03_02_152319_create_amount_dpt', 14),
+	(27, '2023_03_07_002734_create_rw', 15),
+	(28, '2023_03_07_221629_create_rt_rw', 16),
+	(29, '2023_03_07_231714_create_witness', 17);
 
--- Dumping structure for table db_pilcaleg.password_resets
+-- Dumping structure for table projectkoding_Oher2024.password_resets
 CREATE TABLE IF NOT EXISTS `password_resets` (
-  `email` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `token` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `token` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   KEY `password_resets_email_index` (`email`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table db_pilcaleg.password_resets: ~0 rows (approximately)
+-- Dumping data for table projectkoding_Oher2024.password_resets: ~0 rows (approximately)
+INSERT INTO `password_resets` (`email`, `token`, `created_at`) VALUES
+	('rhianjuliansyah4639@gmail.com', '$2y$10$HFsMQi7x/quw2uOxhXQHJuoYSFXNEjxCieGxCb2BMGXGYhG1sTBy.', '2023-03-07 15:33:31');
 
--- Dumping structure for table db_pilcaleg.personal_access_tokens
+-- Dumping structure for table projectkoding_Oher2024.personal_access_tokens
 CREATE TABLE IF NOT EXISTS `personal_access_tokens` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
-  `tokenable_type` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `tokenable_type` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `tokenable_id` bigint unsigned NOT NULL,
-  `name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `token` varchar(64) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `abilities` text COLLATE utf8mb4_unicode_ci,
+  `name` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `token` varchar(64) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `abilities` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
   `last_used_at` timestamp NULL DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
@@ -334,67 +493,94 @@ CREATE TABLE IF NOT EXISTS `personal_access_tokens` (
   KEY `personal_access_tokens_tokenable_type_tokenable_id_index` (`tokenable_type`,`tokenable_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table db_pilcaleg.personal_access_tokens: ~0 rows (approximately)
+-- Dumping data for table projectkoding_Oher2024.personal_access_tokens: ~0 rows (approximately)
 
--- Dumping structure for table db_pilcaleg.sessions
+-- Dumping structure for table projectkoding_Oher2024.rt_rw
+CREATE TABLE IF NOT EXISTS `rt_rw` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `rt_number` char(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `rw_number` char(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `subdistricts_id` bigint unsigned NOT NULL,
+  `village_districts_id` bigint unsigned NOT NULL,
+  `user_id` int DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `rt_rw_subdistricts_id_foreign` (`subdistricts_id`),
+  KEY `rt_rw_village_districts_id_foreign` (`village_districts_id`),
+  CONSTRAINT `rt_rw_subdistricts_id_foreign` FOREIGN KEY (`subdistricts_id`) REFERENCES `subdistricts` (`id`),
+  CONSTRAINT `rt_rw_village_districts_id_foreign` FOREIGN KEY (`village_districts_id`) REFERENCES `village_districts` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Dumping data for table projectkoding_Oher2024.rt_rw: ~1 rows (approximately)
+INSERT INTO `rt_rw` (`id`, `rt_number`, `rw_number`, `subdistricts_id`, `village_districts_id`, `user_id`, `created_at`, `updated_at`) VALUES
+	(4, '002', '001', 5, 12, 1, '2023-03-07 14:56:01', '2023-03-07 14:56:01'),
+	(5, '001', '001', 5, 12, 1, '2023-03-08 04:14:58', '2023-03-08 04:15:37');
+
+-- Dumping structure for table projectkoding_Oher2024.sessions
 CREATE TABLE IF NOT EXISTS `sessions` (
-  `id` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `id` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `user_id` bigint unsigned DEFAULT NULL,
-  `ip_address` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `user_agent` text COLLATE utf8mb4_unicode_ci,
-  `payload` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `ip_address` varchar(45) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `user_agent` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `payload` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `last_activity` int NOT NULL,
   PRIMARY KEY (`id`),
   KEY `sessions_user_id_index` (`user_id`),
   KEY `sessions_last_activity_index` (`last_activity`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table db_pilcaleg.sessions: ~2 rows (approximately)
+-- Dumping data for table projectkoding_Oher2024.sessions: ~2 rows (approximately)
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-	('z3MtERxZL2JrDg2sAOlfqmRer1OA6YfsE7g1LSYi', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36', 'YTo1OntzOjY6Il9mbGFzaCI7YToyOntzOjM6Im5ldyI7YTowOnt9czozOiJvbGQiO2E6MDp7fX1zOjY6Il90b2tlbiI7czo0MDoiTnhsZ051NUx3QXR1Vjk0UzJudTZlT3VtZktpT0lTSGdTRlVGd0RzaiI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MjA6Imh0dHA6Ly9waWxjYWxlZy50ZXN0Ijt9czo1MDoibG9naW5fd2ViXzU5YmEzNmFkZGMyYjJmOTQwMTU4MGYwMTRjN2Y1OGVhNGUzMDk4OWQiO2k6MTtzOjE3OiJwYXNzd29yZF9oYXNoX3dlYiI7czo2MDoiJDJ5JDEwJFJjLmVDdWQ1SVlnYUpBZUZJYWVUMk9RTTlMNE1pcWRWa1YuLnAxd2JRdm5QeHhHNkw2N215Ijt9', 1677692584);
+	('i9VCso5rdAFcWHVu7QLgWX9hphd5NwL9AyJLTQpb', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36 Edg/110.0.1587.63', 'YTo0OntzOjY6Il90b2tlbiI7czo0MDoiZ0x1a1NQVWl2TmIzY1JydW9zOUZSdWwzNXppUHlmTXZYdHhjcVNaRCI7czozOiJ1cmwiO2E6MTp7czo4OiJpbnRlbmRlZCI7czoyNjoiaHR0cDovL3BpbGNhbGVnLnRlc3Qvc2Frc2kiO31zOjk6Il9wcmV2aW91cyI7YToxOntzOjM6InVybCI7czoyNjoiaHR0cDovL3BpbGNhbGVnLnRlc3QvbG9naW4iO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX19', 1678330170),
+	('NnvKhdBZ8U8U7jIrLgflMd6vDSjrnfcJnDjsik3Z', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36', 'YTo1OntzOjY6Il90b2tlbiI7czo0MDoid0J1dGE5ekRIYTBDM2hVMkhlbzNtYml1TGVrNHFNYThldHBSeFVDbCI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MjY6Imh0dHA6Ly9waWxjYWxlZy50ZXN0L3Nha3NpIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo1MDoibG9naW5fd2ViXzU5YmEzNmFkZGMyYjJmOTQwMTU4MGYwMTRjN2Y1OGVhNGUzMDk4OWQiO2k6MTtzOjE3OiJwYXNzd29yZF9oYXNoX3dlYiI7czo2MDoiJDJ5JDEwJFJjLmVDdWQ1SVlnYUpBZUZJYWVUMk9RTTlMNE1pcWRWa1YuLnAxd2JRdm5QeHhHNkw2N215Ijt9', 1678292058);
 
--- Dumping structure for table db_pilcaleg.settings
+-- Dumping structure for table projectkoding_Oher2024.settings
 CREATE TABLE IF NOT EXISTS `settings` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `application_name` varchar(200) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
-  `short_application_name` varchar(200) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
-  `small_icon` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
-  `large_icon` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
-  `background_login` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
-  `background_sidebar` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
-  `gmaps_key` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
-  `layout` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
-  `skin` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `application_name` varchar(200) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `short_application_name` varchar(200) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `small_icon` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `large_icon` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `background_login` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `background_sidebar` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `gmaps_key` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `layout` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `skin` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `user_id` int DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci ROW_FORMAT=DYNAMIC;
 
--- Dumping data for table db_pilcaleg.settings: ~2 rows (approximately)
+-- Dumping data for table projectkoding_Oher2024.settings: ~0 rows (approximately)
 INSERT INTO `settings` (`id`, `application_name`, `short_application_name`, `small_icon`, `large_icon`, `background_login`, `background_sidebar`, `gmaps_key`, `layout`, `skin`, `user_id`, `created_at`, `updated_at`) VALUES
 	(1, 'PILCALEG 2024', 'PILCALEG', '16776560631.png', '16354769112.png', '16354882883.jpg', NULL, 'AIzaSyDk5azS8gZ2aDInOTqyPv7FmB5uBlu55RQ', 'default', 'skin-green-light', 1, '2021-10-29 02:58:27', '2023-03-01 07:39:33');
 
--- Dumping structure for table db_pilcaleg.subdistricts
+-- Dumping structure for table projectkoding_Oher2024.subdistricts
 CREATE TABLE IF NOT EXISTS `subdistricts` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
-  `subdistricts_name` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `subdistricts_name` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `user_id` int DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table db_pilcaleg.subdistricts: ~0 rows (approximately)
+-- Dumping data for table projectkoding_Oher2024.subdistricts: ~2 rows (approximately)
+INSERT INTO `subdistricts` (`id`, `subdistricts_name`, `user_id`, `created_at`, `updated_at`) VALUES
+	(5, 'KENDARI BARAT', 1, '2023-03-04 00:42:40', '2023-03-04 00:42:40'),
+	(6, 'KENDARI', 1, '2023-03-04 00:42:46', '2023-03-04 00:42:46');
 
--- Dumping structure for table db_pilcaleg.sub_menus
+-- Dumping structure for table projectkoding_Oher2024.sub_menus
 CREATE TABLE IF NOT EXISTS `sub_menus` (
   `id` int NOT NULL AUTO_INCREMENT,
   `menu_id` int NOT NULL,
-  `sub_menu_name` varchar(18) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
-  `link` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
-  `attribute` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `sub_menu_name` varchar(18) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `link` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `attribute` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `position` int NOT NULL DEFAULT '0',
-  `desc` tinytext CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+  `desc` tinytext CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci,
   `status` int NOT NULL DEFAULT '0',
   `user_id` int DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
@@ -402,9 +588,9 @@ CREATE TABLE IF NOT EXISTS `sub_menus` (
   PRIMARY KEY (`id`) USING BTREE,
   KEY `menu_id` (`menu_id`) USING BTREE,
   CONSTRAINT `sub_menus_ibfk_1` FOREIGN KEY (`menu_id`) REFERENCES `menus` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci ROW_FORMAT=DYNAMIC;
 
--- Dumping data for table db_pilcaleg.sub_menus: ~8 rows (approximately)
+-- Dumping data for table projectkoding_Oher2024.sub_menus: ~8 rows (approximately)
 INSERT INTO `sub_menus` (`id`, `menu_id`, `sub_menu_name`, `link`, `attribute`, `position`, `desc`, `status`, `user_id`, `created_at`, `updated_at`) VALUES
 	(6, 4, 'User', 'user', 'fa-circle-notch', 1, NULL, 1, 1, '2022-01-12 05:42:20', '2022-01-14 12:01:44'),
 	(7, 4, 'Menu', 'menu', 'fa-circle-notch', 3, NULL, 1, 1, '2022-01-12 05:43:01', '2022-01-12 05:43:01'),
@@ -413,9 +599,9 @@ INSERT INTO `sub_menus` (`id`, `menu_id`, `sub_menu_name`, `link`, `attribute`, 
 	(21, 21, 'Kelurahan', 'kelurahan', NULL, 2, NULL, 1, 1, '2023-03-01 07:16:56', '2023-03-01 07:16:56'),
 	(22, 21, 'Data TPS', 'tps', NULL, 3, NULL, 1, 1, '2023-03-01 07:17:19', '2023-03-01 07:18:01'),
 	(23, 21, 'Data DPT', 'dpt', NULL, 4, NULL, 1, 1, '2023-03-01 07:17:50', '2023-03-01 07:17:50'),
-	(24, 21, 'Data RT/RW', 'rt_rw', NULL, 5, NULL, 1, 1, '2023-03-01 07:18:42', '2023-03-01 07:18:42');
+	(25, 21, 'Data RW/RW', 'rt_rw', NULL, 5, NULL, 1, 1, '2023-03-04 01:23:27', '2023-03-07 14:21:33');
 
--- Dumping structure for table db_pilcaleg.sub_menu_accesses
+-- Dumping structure for table projectkoding_Oher2024.sub_menu_accesses
 CREATE TABLE IF NOT EXISTS `sub_menu_accesses` (
   `id` int NOT NULL AUTO_INCREMENT,
   `group_id` int NOT NULL DEFAULT '0',
@@ -436,9 +622,9 @@ CREATE TABLE IF NOT EXISTS `sub_menu_accesses` (
   CONSTRAINT `sub_menu_accesses_ibfk_1` FOREIGN KEY (`group_id`) REFERENCES `groups` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `sub_menu_accesses_ibfk_2` FOREIGN KEY (`menu_id`) REFERENCES `menu_accesses` (`menu_id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `sub_menu_accesses_ibfk_3` FOREIGN KEY (`sub_menu_id`) REFERENCES `sub_menus` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=55 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=59 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci ROW_FORMAT=DYNAMIC;
 
--- Dumping data for table db_pilcaleg.sub_menu_accesses: ~9 rows (approximately)
+-- Dumping data for table projectkoding_Oher2024.sub_menu_accesses: ~9 rows (approximately)
 INSERT INTO `sub_menu_accesses` (`id`, `group_id`, `menu_id`, `sub_menu_id`, `create`, `read`, `update`, `delete`, `print`, `user_id`, `created_at`, `updated_at`) VALUES
 	(40, 1, 4, 8, 1, 1, 1, 1, 1, 1, '2022-03-08 01:26:36', '2022-03-08 01:26:37'),
 	(41, 1, 4, 6, 1, 1, 1, 1, 1, 1, '2022-03-08 01:27:50', '2022-03-08 01:27:50'),
@@ -446,30 +632,31 @@ INSERT INTO `sub_menu_accesses` (`id`, `group_id`, `menu_id`, `sub_menu_id`, `cr
 	(47, 1, 21, 20, 1, 1, 1, 1, 0, 1, '2023-03-01 07:19:38', '2023-03-01 07:19:38'),
 	(48, 1, 21, 21, 1, 1, 1, 1, 0, 1, '2023-03-01 07:19:53', '2023-03-01 07:19:53'),
 	(49, 1, 21, 22, 1, 1, 1, 1, 0, 1, '2023-03-01 07:20:09', '2023-03-01 07:20:09'),
-	(50, 1, 21, 23, 0, 0, 0, 0, 0, 1, '2023-03-01 07:21:03', '2023-03-01 07:21:03'),
-	(51, 1, 21, 24, 1, 1, 1, 1, 0, 1, '2023-03-01 07:21:17', '2023-03-01 07:21:22'),
-	(52, 2, 21, 23, 0, 0, 0, 0, 0, 1, '2023-03-01 07:31:52', '2023-03-01 07:31:52'),
+	(50, 1, 21, 23, 1, 1, 1, 1, 0, 1, '2023-03-01 07:21:03', '2023-03-04 01:24:24'),
+	(52, 2, 21, 23, 1, 1, 1, 1, 0, 1, '2023-03-01 07:31:52', '2023-03-08 15:30:35'),
 	(53, 2, 21, 22, 1, 1, 1, 1, 0, 1, '2023-03-01 07:32:16', '2023-03-01 07:32:16'),
-	(54, 2, 21, 24, 1, 1, 1, 1, 0, 1, '2023-03-01 07:32:36', '2023-03-01 07:32:36');
+	(56, 1, 21, 25, 1, 1, 1, 1, 0, 1, '2023-03-04 01:25:51', '2023-03-04 01:25:51'),
+	(58, 2, 21, 25, 1, 1, 1, 1, 0, 1, '2023-03-08 15:30:21', '2023-03-08 15:30:21');
 
--- Dumping structure for table db_pilcaleg.support_teams
+-- Dumping structure for table projectkoding_Oher2024.support_teams
 CREATE TABLE IF NOT EXISTS `support_teams` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
   `support_teams_family_card_number` bigint DEFAULT NULL,
   `support_teams_id_number` bigint DEFAULT NULL,
-  `support_teams_name` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `support_teams_place_of_birth` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `support_teams_name` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `support_teams_place_of_birth` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `support_teams_date_of_birth` date DEFAULT NULL,
-  `support_teams_gender` enum('L','P') COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `support_teams_work` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `support_teams_gender` enum('L','P') CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `support_teams_work` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `support_teams_cellphone` bigint DEFAULT NULL,
-  `support_teams_address` text COLLATE utf8mb4_unicode_ci,
+  `support_teams_address` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
   `support_teams_rt` int DEFAULT NULL,
   `support_teams_rw` int DEFAULT NULL,
   `support_teams_must_choose` int DEFAULT NULL,
   `status_hapus` int DEFAULT NULL,
   `subdistricts_id` bigint unsigned NOT NULL,
   `village_districts_id` bigint unsigned NOT NULL,
+  `user_id` int unsigned NOT NULL DEFAULT '0',
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
@@ -479,15 +666,16 @@ CREATE TABLE IF NOT EXISTS `support_teams` (
   CONSTRAINT `support_teams_village_districts_id_foreign` FOREIGN KEY (`village_districts_id`) REFERENCES `village_districts` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table db_pilcaleg.support_teams: ~0 rows (approximately)
+-- Dumping data for table projectkoding_Oher2024.support_teams: ~0 rows (approximately)
 
--- Dumping structure for table db_pilcaleg.tps
+-- Dumping structure for table projectkoding_Oher2024.tps
 CREATE TABLE IF NOT EXISTS `tps` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
-  `number_of_tps` int DEFAULT NULL,
-  `tps_information` text COLLATE utf8mb4_unicode_ci,
+  `number_of_tps` char(10) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `tps_information` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
   `subdistricts_id` bigint unsigned NOT NULL,
   `village_districts_id` bigint unsigned NOT NULL,
+  `user_id` int unsigned NOT NULL DEFAULT '0',
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
@@ -495,11 +683,14 @@ CREATE TABLE IF NOT EXISTS `tps` (
   KEY `tps_village_districts_id_foreign` (`village_districts_id`),
   CONSTRAINT `tps_subdistricts_id_foreign` FOREIGN KEY (`subdistricts_id`) REFERENCES `subdistricts` (`id`),
   CONSTRAINT `tps_village_districts_id_foreign` FOREIGN KEY (`village_districts_id`) REFERENCES `village_districts` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table db_pilcaleg.tps: ~0 rows (approximately)
+-- Dumping data for table projectkoding_Oher2024.tps: ~0 rows (approximately)
+INSERT INTO `tps` (`id`, `number_of_tps`, `tps_information`, `subdistricts_id`, `village_districts_id`, `user_id`, `created_at`, `updated_at`) VALUES
+	(2, '01', 'kosong satu', 5, 12, 1, '2023-03-08 03:58:29', '2023-03-08 03:59:43'),
+	(3, '01', 'kosong satu', 6, 3, 1, '2023-03-08 04:10:11', '2023-03-08 04:11:21');
 
--- Dumping structure for table db_pilcaleg.users
+-- Dumping structure for table projectkoding_Oher2024.users
 CREATE TABLE IF NOT EXISTS `users` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -516,53 +707,74 @@ CREATE TABLE IF NOT EXISTS `users` (
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE KEY `users_email_unique` (`email`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=507 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=512 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
 
--- Dumping data for table db_pilcaleg.users: ~3 rows (approximately)
+-- Dumping data for table projectkoding_Oher2024.users: ~3 rows (approximately)
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `two_factor_secret`, `two_factor_recovery_codes`, `remember_token`, `group_id`, `foto`, `status`, `created_at`, `updated_at`) VALUES
 	(1, 'administrator', 'rhianjuliansyah4639@gmail.com', '2022-03-01 08:30:46', '$2y$10$Rc.eCud5IYgaJAeFIaeT2OQM9L4MiqdVkV..p1wbQvnPxxG6L67my', NULL, NULL, NULL, 1, '1677655544.jpeg', 1, '2021-04-05 06:20:00', '2023-03-01 07:26:01'),
-	(504, 'operator', 'euis.nurhiliya@gmail.com', '2022-03-08 02:35:23', '$2y$10$.erEA.tdr.mEhDnbFxAmrOuFbKWT14FRBP11S6Llg3ccduuhFF6Mm', NULL, NULL, 'vildBBUh8MqWThjDBU2B4tFTc8TW8gdmtFgm42B2Y29SXf9T8r81cKsMn2bG', 2, NULL, 1, '2022-03-08 02:32:03', '2023-03-01 07:30:19'),
-	(506, 'ian', 'rhianjuliansyah@gmail.com', '2023-03-01 08:28:34', '$2y$10$muJLDVjz3ylXUZBjEKDjW.AlBQkW.1IXWYSKVFDS7O3fqx.6yiFW6', NULL, NULL, NULL, 2, NULL, 1, '2023-03-01 08:26:46', '2023-03-01 08:26:46');
+	(506, 'operator', 'rhianjuliansyah@gmail.com', '2023-03-01 08:28:34', '$2y$10$oZ5ceHuFRkjuJGxVYEMUiubHzJHenTIlH3RA8MNJlhA3KjrzZTX2y', NULL, NULL, NULL, 2, NULL, 1, '2023-03-01 08:26:46', '2023-03-03 15:00:25'),
+	(511, 'ian', 'jom@gmail.com', '2023-03-04 20:35:32', '$2y$10$mvbTEjxZSwJy.vvy3cs6D.GPYLBwpeUFo7vmczSeNjDY3FAUoAHAW', NULL, NULL, NULL, 2, NULL, 1, '2023-03-04 20:35:32', '2023-03-04 20:35:32');
 
--- Dumping structure for table db_pilcaleg.village_districts
+-- Dumping structure for table projectkoding_Oher2024.village_districts
 CREATE TABLE IF NOT EXISTS `village_districts` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
-  `village_districts_name` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `village_districts_name` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `subdistricts_id` bigint unsigned NOT NULL,
+  `user_id` bigint unsigned NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `village_districts_subdistricts_id_foreign` (`subdistricts_id`),
   CONSTRAINT `village_districts_subdistricts_id_foreign` FOREIGN KEY (`subdistricts_id`) REFERENCES `subdistricts` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table db_pilcaleg.village_districts: ~0 rows (approximately)
+-- Dumping data for table projectkoding_Oher2024.village_districts: ~17 rows (approximately)
+INSERT INTO `village_districts` (`id`, `village_districts_name`, `subdistricts_id`, `user_id`, `created_at`, `updated_at`) VALUES
+	(3, 'Gunung Jati', 6, 1, '2023-03-04 01:30:34', '2023-03-04 01:30:34'),
+	(4, 'Jati Mekar', 6, 1, '2023-03-04 01:30:56', '2023-03-04 01:30:56'),
+	(5, 'Kampungsalo', 6, 1, '2023-03-04 01:31:17', '2023-03-04 01:31:17'),
+	(6, 'Kandai', 6, 1, '2023-03-04 01:31:36', '2023-03-04 01:31:36'),
+	(7, 'Kendari Caddi', 6, 1, '2023-03-04 01:32:08', '2023-03-04 01:32:08'),
+	(8, 'Kassilampe', 6, 1, '2023-03-04 01:32:25', '2023-03-04 01:32:25'),
+	(9, 'Mangga Dua', 6, 1, '2023-03-04 01:32:44', '2023-03-04 01:32:44'),
+	(10, 'Mata', 6, 1, '2023-03-04 01:33:02', '2023-03-04 01:33:02'),
+	(11, 'Purirano', 6, 1, '2023-03-04 01:33:19', '2023-03-04 01:33:19'),
+	(12, 'Benu-Benua', 5, 1, '2023-03-04 01:33:42', '2023-03-04 01:33:42'),
+	(13, 'Dapu-Dapura', 5, 1, '2023-03-04 01:33:59', '2023-03-04 01:33:59'),
+	(14, 'Kemaraya', 5, 1, '2023-03-04 01:34:13', '2023-03-04 01:34:13'),
+	(15, 'Lahundape', 5, 1, '2023-03-04 01:34:30', '2023-03-04 01:34:30'),
+	(16, 'Punggaloba', 5, 1, '2023-03-04 01:34:49', '2023-03-04 01:34:49'),
+	(17, 'Sadoha', 5, 1, '2023-03-04 01:35:03', '2023-03-04 01:35:03'),
+	(18, 'Sanua', 5, 1, '2023-03-04 01:35:19', '2023-03-04 01:35:19'),
+	(19, 'Tipulu', 5, 1, '2023-03-04 01:35:37', '2023-03-04 01:35:37'),
+	(20, 'Watu-Watu', 5, 1, '2023-03-04 01:35:54', '2023-03-04 01:35:54');
 
--- Dumping structure for table db_pilcaleg.volunteers
-CREATE TABLE IF NOT EXISTS `volunteers` (
+-- Dumping structure for table projectkoding_Oher2024.witness
+CREATE TABLE IF NOT EXISTS `witness` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
-  `volunteers_id_number` bigint DEFAULT NULL,
-  `volunteers_name` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `volunteers_place_of_birth` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `volunteers_date_of_birth` date DEFAULT NULL,
-  `volunteers_gender` enum('L','P') COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `volunteers_work` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `volunteers_address` text COLLATE utf8mb4_unicode_ci,
-  `volunteers_rt` int DEFAULT NULL,
-  `volunteers_rw` int DEFAULT NULL,
-  `volunteers_cellphone` bigint DEFAULT NULL,
+  `witness_id_number` bigint DEFAULT NULL,
+  `witness_name` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `witness_place_of_birth` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `witness_date_of_birth` date DEFAULT NULL,
+  `witness_gender` enum('L','P') COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `witness_work` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `witness_address` text COLLATE utf8mb4_unicode_ci,
+  `witness_rt` int DEFAULT NULL,
+  `witness_rw` int DEFAULT NULL,
+  `witness_cellphone` bigint DEFAULT NULL,
   `subdistricts_id` bigint unsigned NOT NULL,
   `village_districts_id` bigint unsigned NOT NULL,
+  `user_id` int unsigned NOT NULL DEFAULT '0',
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
-  KEY `volunteers_subdistricts_id_foreign` (`subdistricts_id`),
-  KEY `volunteers_village_districts_id_foreign` (`village_districts_id`),
-  CONSTRAINT `volunteers_subdistricts_id_foreign` FOREIGN KEY (`subdistricts_id`) REFERENCES `subdistricts` (`id`),
-  CONSTRAINT `volunteers_village_districts_id_foreign` FOREIGN KEY (`village_districts_id`) REFERENCES `village_districts` (`id`)
+  KEY `witness_subdistricts_id_foreign` (`subdistricts_id`),
+  KEY `witness_village_districts_id_foreign` (`village_districts_id`),
+  CONSTRAINT `witness_subdistricts_id_foreign` FOREIGN KEY (`subdistricts_id`) REFERENCES `subdistricts` (`id`),
+  CONSTRAINT `witness_village_districts_id_foreign` FOREIGN KEY (`village_districts_id`) REFERENCES `village_districts` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table db_pilcaleg.volunteers: ~0 rows (approximately)
+-- Dumping data for table projectkoding_Oher2024.witness: ~0 rows (approximately)
 
 /*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;

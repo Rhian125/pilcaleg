@@ -15,7 +15,7 @@ $setting = SiteHelpers::setting();
         <link rel="stylesheet" href="{{ asset('assets/core-admin/core-dist/css/AdminLTE.css') }}">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
         <link href="https://fonts.googleapis.com/css?family=Anton|Permanent+Marker|Quicksand" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;400&display=swap" rel="stylesheet"> 
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;400&display=swap" rel="stylesheet">
         <style type="text/css">
             .fontQuicksand{
                 font-family: 'Quicksand', sans-serif;
@@ -26,7 +26,7 @@ $setting = SiteHelpers::setting();
             }
         </style>
     </head>
-    <body class="hold-transition login-page fontPoppins"  style="background-image: url({{ asset('upload/setting/'.$setting->background_login) }});background-size: cover;background-position: center;">
+    <body class="hold-transition login-page fontPoppins"  style="background-image: url({{ asset('upload/setting/'.$setting->background_login) }}); background-size: cover; background-position: revert;">
          @yield('content')
         <script src="{{ asset('/assets/core-admin/core-component/jquery/dist/jquery.min.js') }}"></script>
         <script src="{{ asset('/assets/core-admin/core-component/bootstrap/dist/js/bootstrap.min.js') }}"></script>
