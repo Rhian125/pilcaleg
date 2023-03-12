@@ -61,15 +61,19 @@
 						<th >No. HandPhone</th>
 						<th style="width: 10px" >#aksi</th>
 					</tr>
-					@foreach($saksi as $v)
+					@foreach($relawan as $v)
 					<tr>
-						<td>{{ ($saksi ->currentpage()-1) * $saksi ->perpage() + $loop->index + 1 }}</td>
-						<td>{{ $v->witness_id_number }}</td>
-						<td>{{ $v->witness_name }}</td>
-						<td>{{ $v->witness_place_of_birth }}, {{ $v->witness_date_of_birth }}</td>
-						<td>{{ $v->witness_gender }}</td>
-						<td>{{ $v->witness_work }}</td>
-						<td>{{ $v->witness_address }}</td>
+						<td>{{ ($relawan ->currentpage()-1) * $relawan ->perpage() + $loop->index + 1 }}</td>
+						<td>{{ $v->volunteers_id_number }}</td>
+						<td>{{ $v->volunteers_name }}</td>
+						<td>{{ $v->volunteers_place_of_birth }}, {{ $v->volunteers_date_of_birth }}</td>
+						<td>{{ $v->volunteers_gender }}</td>
+                        <td>
+                            @if ($v->jobs_id)
+								{{ $v->jobs->jobs_name}}
+							@endif
+						</td>
+						<td>{{ $v->volunteers_address }}</td>
                         <td>
                             @if ($v->subdistricts_id)
 								{{ $v->kecamatan->subdistricts_name}}
@@ -80,8 +84,8 @@
 								{{ $v->kelurahan->village_districts_name}}
 							@endif
 						</td>
-						<td>{{ $v->witness_rt }} / {{ $v->witness_rw }}</td>
-						<td>{{ $v->witness_cellphone }}</td>
+						<td>{{ $v->volunteers_rt }} / {{ $v->volunteers_rw }}</td>
+						<td>{{ $v->volunteers_cellphone }}</td>
 						<td>
 							@can('ubah-data')
 								<a href="{{ url('/'.Request::segment(1).'/edit/'.Crypt::encrypt($v->id) ) }}" class="btn btn-xs btn-flat btn-warning">Edit</a>
@@ -98,7 +102,7 @@
 		@endcan
 		<div class="box-footer">
 			<!-- PAGINATION -->
-			<div class="float-right">{{ $saksi->appends(Request::only('search'))->links() }}</div>
+			<div class="float-right">{{ $relawan->appends(Request::only('search'))->links() }}</div>
 		</div>
 	</div>
 	</section>

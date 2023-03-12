@@ -11,7 +11,7 @@ use App\Http\Controllers\KelurahanController;
 use App\Http\Controllers\TpsController;
 use App\Http\Controllers\DptController;
 use App\Http\Controllers\RtRwController;
-use App\Http\Controllers\SaksiController;
+use App\Http\Controllers\RelawanController;
 use App\Http\Controllers\LogController;
 use App\Http\Controllers\SettingController;
 use App\Http\Controllers\GroupController;
@@ -141,15 +141,15 @@ Route::middleware(['user_access','verified'])->group(function () {
     Route::put('/rt_rw/edit/{rt_rw}', [RtRwController::class, 'update']);
     Route::get('/rt_rw/hapus/{rt_rw}',[RtRwController::class, 'delete']);
 
-    ## Tim Saksi
-    Route::get('/saksi', [SaksiController::class, 'index']);
-    Route::get('/saksi/search', [SaksiController::class, 'search']);
-    Route::get('/saksi/create', [SaksiController::class, 'create']);
-    Route::post('/saksi', [SaksiController::class, 'store']);
-    Route::get('/saksi/edit/{saksi}', [SaksiController::class, 'edit']);
-    Route::put('/saksi/edit/{saksi}', [SaksiController::class, 'update']);
-    Route::get('/saksi/hapus/{saksi}',[SaksiController::class, 'delete']);
-    Route::post('/data_saksipendukung/import', [SaksiController::class, 'import']);
+    ## Tim relawan
+    Route::get('/relawan', [RelawanController::class, 'index']);
+    Route::get('/relawan/search', [RelawanController::class, 'search']);
+    Route::get('/relawan/create', [RelawanController::class, 'create']);
+    Route::post('/relawan', [RelawanController::class, 'store']);
+    Route::get('/relawan/edit/{relawan}', [RelawanController::class, 'edit']);
+    Route::put('/relawan/edit/{relawan}', [RelawanController::class, 'update']);
+    Route::get('/relawan/hapus/{relawan}',[RelawanController::class, 'delete']);
+    Route::post('/relawan/import', [RelawanController::class, 'import']);
 
 
     ##
