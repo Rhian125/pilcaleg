@@ -41,13 +41,13 @@ class PendukungController extends Controller
         $pendukung = $request->get('search');
         $filter = $request->get('filter');
 
-        $pendukung = Pendukung::where('status_hapus', 0)
-                            ->when(!empty($filter), function ($query) use ($filter, $pendukung) {
+        $pendukung = Pendukung::when(!empty($filter), function ($query) use ($filter, $pendukung) {
                                 $query->where($filter, 'LIKE', '%' . $pendukung . '%');
                             })
                             ->when(empty($filter), function ($query) use ($pendukung) {
-                                $query->where('volunteers_id_number', 'LIKE', '%' . $pendukung . '%')
-                                        ->orWhere('volunteers_name', 'LIKE', '%' . $pendukung . '%');
+                                $query->where('support_teams_family_card_number', 'LIKE', '%' . $pendukung . '%')
+                                        ->orWhere('support_teams_id_number', 'LIKE', '%' . $pendukung . '%')
+                                        ->orWhere('support_teams_name', 'LIKE', '%' . $pendukung . '%');
                             })
                             ->orderBy('id', 'DESC')->paginate(25)->onEachSide(1);
 
@@ -70,29 +70,33 @@ class PendukungController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'volunteers_id_number' => 'required|unique:volunteers|numeric|digits:16',
-            'volunteers_name' => 'required',
-            'volunteers_place_of_birth' => 'required',
-            'volunteers_date_of_birth' => 'required',
-            'volunteers_gender' => 'required',
-            'volunteers_address' => 'required',
-            'volunteers_rt' => 'required',
-            'volunteers_rw' => 'required',
-            'volunteers_cellphone' => 'required',
+            'support_teams_family_card_number' => 'required|unique:support_teams|numeric|digits:16',
+            'support_teams_id_number' => 'required|unique:support_teams|numeric|digits:16',
+            'support_teams_name' => 'required',
+            'support_teams_place_of_birth' => 'required',
+            'support_teams_date_of_birth' => 'required',
+            'support_teams_gender' => 'required',
+            'support_teams_address' => 'required',
+            'support_teams_rt' => 'required',
+            'support_teams_rw' => 'required',
+            'support_teams_cellphone' => 'required',
+            'support_teams_must_choose' => 'required',
             'jobs_id' => 'required',
             'subdistricts_id' => 'required',
             'village_districts_id' => 'required',
         ]);
 
-        $input['volunteers_id_number'] = $request->volunteers_id_number;
-        $input['volunteers_name'] = $request->volunteers_name;
-        $input['volunteers_place_of_birth'] = $request->volunteers_place_of_birth;
-        $input['volunteers_date_of_birth'] = $request->volunteers_date_of_birth;
-        $input['volunteers_gender'] = $request->volunteers_gender;
-        $input['volunteers_address'] = $request->volunteers_address;
-        $input['volunteers_rt'] = $request->volunteers_rt;
-        $input['volunteers_rw'] = $request->volunteers_rw;
-        $input['volunteers_cellphone'] = $request->volunteers_cellphone;
+        $input['support_teams_family_card_number'] = $request->support_teams_family_card_number;
+        $input['support_teams_id_number'] = $request->support_teams_id_number;
+        $input['support_teams_name'] = $request->support_teams_name;
+        $input['support_teams_place_of_birth'] = $request->support_teams_place_of_birth;
+        $input['support_teams_date_of_birth'] = $request->support_teams_date_of_birth;
+        $input['support_teams_gender'] = $request->support_teams_gender;
+        $input['support_teams_address'] = $request->support_teams_address;
+        $input['support_teams_rt'] = $request->support_teams_rt;
+        $input['support_teams_rw'] = $request->support_teams_rw;
+        $input['support_teams_cellphone'] = $request->support_teams_cellphone;
+        $input['support_teams_must_choose'] = $request->support_teams_must_choose;
         $input['jobs_id'] = $request->jobs_id;
         $input['subdistricts_id'] = $request->subdistricts_id;
         $input['village_districts_id'] = $request->village_districts_id;
@@ -126,15 +130,17 @@ class PendukungController extends Controller
         $pendukung = Pendukung::where('id',$pendukung)->first();
 
         $this->validate($request, [
-            'volunteers_id_number' => 'required|numeric|digits:16',
-            'volunteers_name' => 'required',
-            'volunteers_place_of_birth' => 'required',
-            'volunteers_date_of_birth' => 'required',
-            'volunteers_gender' => 'required',
-            'volunteers_address' => 'required',
-            'volunteers_rt' => 'required',
-            'volunteers_rw' => 'required',
-            'volunteers_cellphone' => 'required',
+            'support_teams_family_card_number' => 'required|numeric|digits:16',
+            'support_teams_id_number' => 'required|numeric|digits:16',
+            'support_teams_name' => 'required',
+            'support_teams_place_of_birth' => 'required',
+            'support_teams_date_of_birth' => 'required',
+            'support_teams_gender' => 'required',
+            'support_teams_address' => 'required',
+            'support_teams_rt' => 'required',
+            'support_teams_rw' => 'required',
+            'support_teams_cellphone' => 'required',
+            'support_teams_must_choose' => 'required',
             'jobs_id' => 'required',
             'subdistricts_id' => 'required',
             'village_districts_id' => 'required',

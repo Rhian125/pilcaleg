@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Timpendukung;   //nama model
+use App\Models\Pendukung;   //nama model
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\DB;
@@ -16,7 +16,7 @@ class HomeController extends Controller
 
     public function index()
     {
-        $tim_pendukung = Timpendukung::where('status_hapus', 0)->count();
+        $tim_pendukung = Pendukung::count();
         return view('admin.beranda', compact('tim_pendukung'));
     }
 }
